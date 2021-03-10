@@ -11,7 +11,7 @@ passport.use(new GoogleStrategy({
   },
   function(accessToken, refreshToken, profile, cb) { // verify callback
     // a user has logged in via OAuth!
-    // console.log(profile, "<----- Profile")
+    console.log(profile, "<----- Profile")
     // Fetch the User from the database and provide them back to passport 
     Student.findOne({'googleId': profile.id}, function(err, student){
       if(err) return cb(err);
