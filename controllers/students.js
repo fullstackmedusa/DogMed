@@ -1,8 +1,19 @@
 const Student = require('../models/student');
 
 module.exports = {
-  index
+  index,
+  addFact
 };
+
+
+function addFact(req, res){
+  req.user.facts.push(req.body);
+   // req.user is a mongoose document
+   // where did we assign the mongoose document to req.user
+  req.user.save(function(err){
+    res.redirect('/students')
+  })
+}
 
 function index(req, res, next) {
   console.log(req.query)
