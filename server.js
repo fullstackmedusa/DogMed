@@ -50,6 +50,10 @@ app.use(function(req, res, next){
   // attached to locals is what the property/variable that will be availible throughout our application 
   // in ejs
   res.locals.user = req.user; // if we are not logged in req.user will be undefined
+  // creates a "user" variable
+  // that is availiable in every single
+  // ejs file now
+
   next();
 })
 

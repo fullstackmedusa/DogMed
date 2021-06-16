@@ -70,7 +70,9 @@ passport.deserializeUser(function(id, done){
 
   Student.findById(id, function(err, studentDoc){
     done(err, studentDoc);
-
+    // setsup
     // req.user = studentDoc
+    // req.user is avialible in all of our controller functions
+    // throughout the entire app
   })
 })

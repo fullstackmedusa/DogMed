@@ -24,4 +24,12 @@ router.get('/oauth2callback', passport.authenticate(
 ))
 
 
+router.get('/logout', function(req, res){
+  // passport gives us req.logout()
+  req.logout(); // deletes our session cookie, so the browser will need to re login
+  // to req authenticate
+  res.redirect('/students'); // redirect to whereever you want to go
+})
+
+
 module.exports = router;
