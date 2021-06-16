@@ -39,6 +39,8 @@ app.use(session({
   saveUninitialized: true
 }));
 
+// you want to set up passport right after your session
+
 app.use(passport.initialize()); // straight from the docs
 app.use(passport.session());
 
