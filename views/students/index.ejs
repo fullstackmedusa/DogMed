@@ -21,8 +21,10 @@
           <li>
             <% if (user) { %>
               <a href="/logout">Log Out</a>
+              <span>Hi <%= user.name %> </span>
             <% } else { %>
               <a href="/auth/google"> Login with Google</a>
+
             <% } %>       
           </li>
         </ul>

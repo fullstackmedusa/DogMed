@@ -12,8 +12,8 @@ router.post('/facts', isLoggedIn, studentsCtrl.addFact);
 function isLoggedIn(req, res, next) {
 	// req.isAuthenticated() this is given to us by passport
 	// it returns true or false
-	if ( req.isAuthenticated() ) return next(); // next() go to the next function in middleware
-	res.redirect('/auth/google');
+	if ( req.isAuthenticated() ) return next(); // next() go to the next function in middleware, above situation studentsCtrl.addFact
+	res.redirect('/auth/google'); // redirect them to login
 }
 
 

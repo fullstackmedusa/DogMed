@@ -10,6 +10,9 @@ function addFact(req, res){
   req.user.facts.push(req.body);
    // req.user is a mongoose document
    // where did we assign the mongoose document to req.user
+
+  
+
   req.user.save(function(err){
     res.redirect('/students')
   })
@@ -17,7 +20,7 @@ function addFact(req, res){
 
 function index(req, res, next) {
   console.log(req.query)
-  console.log(req.user)
+  console.log(req.user, ' req.user')
   // Make the query object to use with Student.find based up
   // the user has submitted the search form or now
   let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};

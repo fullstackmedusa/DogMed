@@ -8,13 +8,14 @@ const factSchema = new mongoose.Schema({
   timestamps: true
 });
 // One student has many facts, facts belong to one student
+// Student model, is basically going to be like your user model, in your app, 
 const studentSchema = new mongoose.Schema({
   name: String,
   email: String,
   cohort: String,
   avatar: String,
   facts: [factSchema],
-  googleId: String
+  googleId: String // <-- This property needs to be on your user model for your project
 
 }, {
   timestamps: true

@@ -33,6 +33,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 // mount the session middleware
+// This creates our session cookie, 
+// which is a string that is sent to browser when they login to our app, 
+// then the browser on every single request the client makes sends the cookie with thier request
+// to identify the browser that is sending the request
 app.use(session({
   secret: 'SEI Rocks!',
   resave: false,
@@ -48,12 +52,14 @@ app.use(passport.session());
 // to make sure req.user is accessible in every view
 app.use(function(req, res, next){
   // attached to locals is what the property/variable that will be availible throughout our application 
-  // in ejs
+  // in ejs, in every view.ejs file, we will have a user variable
   res.locals.user = req.user; // if we are not logged in req.user will be undefined
   // creates a "user" variable
   // that is availiable in every single
   // ejs file now
 
+
+  // the students/index.ejs, line 22 if(user) <- is an example of how to use this
   next();
 })
 
