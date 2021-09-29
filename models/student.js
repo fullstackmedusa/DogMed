@@ -14,7 +14,7 @@ const studentSchema = new mongoose.Schema({
   email: String,
   cohort: String,
   avatar: String,
-  facts: [factSchema],
+  facts: [factSchema], // no related data on your user schema, put the relation on the other model!
   googleId: String // <-- This property needs to be on your user model for your project
 
 }, {
