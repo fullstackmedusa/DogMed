@@ -7,7 +7,7 @@ const factSchema = new mongoose.Schema({
 }, {
   timestamps: true
 });
-
+// One student has many facts, facts belong to one student
 const studentSchema = new mongoose.Schema({
   name: String,
   email: String,
