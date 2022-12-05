@@ -24,7 +24,7 @@ function index(req, res, next) {
     // Passing search values, name & sortKey, for use in the EJS
     res.render('students/index', {
       students,
-      user: req.user,
+    
       name: req.query.name,
       sortKey
     });

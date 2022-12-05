@@ -14,7 +14,7 @@ router.get('/auth/google', passport.authenticate( // The route the client makes 
 router.get('/oauth2callback', passport.authenticate(
   'google', 
   {
-    successRedirect: '/students', // <-- this you'll have to decide, redirect to the your home page for you app, maybe your index route
+    successRedirect: '/students', // <-- this you'll have to decide, redirect to the your home page for you app, maybe your index route for your main resource
     failureRedirect: '/students' // <--- this you'll have to decide
   }
 ))

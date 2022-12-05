@@ -10,6 +10,7 @@ var methodOverride = require('method-override');
 // load the env vars
 require('dotenv').config();
 
+
 // create the Express app
 var app = express();
 
@@ -42,7 +43,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
-
+// The session cookie must be created before passport can use it!
 // you want to set up passport right after your session
 
 app.use(passport.initialize()); // straight from the docs

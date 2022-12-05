@@ -27,7 +27,7 @@ passport.use(
 
         if (studentDoc) {
           // if the user exists
-
+            // cb signature is - cb
           return cb(null, studentDoc); // send the user doc to the next a middleware function in passport
           // cb is verify callback that will pass  our information to passport.serializeUser at the bottom of the file
           // cb(error, SuccessWhichIsYourUserDocument)
